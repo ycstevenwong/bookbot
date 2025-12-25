@@ -16,8 +16,10 @@ def main():
     print("----------- Word Count ----------")
     print(f"Found {len(words)} total words")
     print("--------- Character Count -------")
-    for key,value in sorted_chars.items():
-        print(f"{key}: {value}");
+    for item in sorted_chars:
+        if not item["char"].isalpha():
+            continue
+        print(f"{item['char']}: {item['num']}")
     print("============= END ===============")
 
 if __name__ == "__main__":

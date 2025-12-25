@@ -12,6 +12,13 @@ def count_chars(file_contents):
             chars_dict[char] += 1;
     return chars_dict;
 
+def sort_on(d):
+    return d["num"]
+
 def sort_chars(chars_dict):
-    sorted_dict = dict(sorted(chars_dict.items(), key=lambda item: item[1],reverse=True))
-    return sorted_dict;
+    chars_list = []
+    for char in chars_dict:
+        chars_list.append({"char": char, "num": chars_dict[char]})
+    chars_list.sort(reverse=True,key=sort_on);
+    return chars_list;
+
